@@ -3,7 +3,10 @@
   "version": "0.0.0-dripip",
   "description": "Fixed version of endent",
   "main": "dist/index.js",
-  "prepublishOnly": "yarn test",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "jest",
     "prepublishOnly": "yarn build",

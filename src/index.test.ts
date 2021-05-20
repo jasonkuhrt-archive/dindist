@@ -1,4 +1,4 @@
-import endent from '.'
+import dindist from '.'
 
 test('object', () => {
   var json = JSON.stringify(JSON.parse('[ "abc" ]'), null, 2)
@@ -23,22 +23,22 @@ test('object', () => {
     dependencyTmpl += `var ${d} = require("${d}")\n`
   })
 
-  var jsFile = endent`
+  var jsFile = dindist`
     ${dependencyTmpl}
     module.exports = store
 
     function store (state, emitter) {
       emitter.on("DOMContentLoaded", function () {
         state["json"] = ${json}
-        state["${objectName}"] = ${endent.pretty(someobj)}
-        state["colors"] = ${endent.pretty(colors)}
-        state["name"] = "${endent.pretty('jack')}"
+        state["${objectName}"] = ${dindist.pretty(someobj)}
+        state["colors"] = ${dindist.pretty(colors)}
+        state["name"] = "${dindist.pretty('jack')}"
         state["name2"] = "${'tom'}"
-        state["number"] = ${endent.pretty(123)}
+        state["number"] = ${dindist.pretty(123)}
         state["number2"] = ${123}
-        state["Iamundefined"] = ${endent.pretty()}
-        state["Iamnull"] = ${endent.pretty(null)}
-        state["Iamregexp"] = ${endent.pretty(/abc/)}
+        state["Iamundefined"] = ${dindist.pretty()}
+        state["Iamnull"] = ${dindist.pretty(null)}
+        state["Iamregexp"] = ${dindist.pretty(/abc/)}
       })
     }
   `
@@ -91,7 +91,7 @@ test('string', () => {
 hello
   world`
 
-  const b = endent`
+  const b = dindist`
     foo.
     ${a}
     bar.`
@@ -107,7 +107,7 @@ bar.`
 
 test('issue#1', () => {
   const a = '"test"'
-  const r = endent`
+  const r = dindist`
     {
       ${a}: null
     }
@@ -118,7 +118,7 @@ test('issue#1', () => {
 })
 
 test('issue#2', () => {
-  const r = endent`
+  const r = dindist`
     foo.
     x=${'hello\n  world'}
     bar.
@@ -132,11 +132,11 @@ bar.`
 })
 
 test('tab', () => {
-  expect(endent`foo\tbar`).toEqual('foo\tbar')
+  expect(dindist`foo\tbar`).toEqual('foo\tbar')
 })
 
 // https://github.com/prisma/nexus-prisma/issues/50
 test('issue#3', () => {
-  const result = endent`\\a\\b\\node_modules\\c\\index.js`
+  const result = dindist`\\a\\b\\node_modules\\c\\index.js`
   expect(result).toEqual(`\\a\\b\\node_modules\\c\\index.js`)
 })

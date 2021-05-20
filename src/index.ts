@@ -3,7 +3,7 @@ import objectorarray from 'objectorarray'
 
 const ENDENT_ID = 'twhZNwxI1aFG3r4'
 
-function endent(strings: TemplateStringsArray, ...values: any[]) {
+function dindist(strings: TemplateStringsArray, ...values: any[]) {
   let result = ''
 
   for (let i = 0; i < strings.length; i++) {
@@ -58,13 +58,13 @@ function endent(strings: TemplateStringsArray, ...values: any[]) {
   return result.split(ENDENT_ID).join('')
 }
 
-endent.pretty = (data?: object | string | number | undefined | null) => {
+dindist.pretty = (data?: object | string | number | undefined | null) => {
   return objectorarray(data)
     ? { [ENDENT_ID]: JSON.stringify(data, null, 2) }
     : data
 }
 
-export default endent
+export default dindist
 
 /**
  * helpers
