@@ -3,10 +3,10 @@
   "version": "0.0.0-dripip",
   "description": "Fixed version of endent",
   "main": "dist/index.js",
-  "prepublishOnly": "npm test",
+  "prepublishOnly": "yarn test",
   "scripts": {
     "test": "jest",
-    "prepare": "npm run build",
+    "prepare": "yarn build",
     "build": "tsc"
   },
   "repository": {
