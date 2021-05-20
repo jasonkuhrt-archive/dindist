@@ -1,6 +1,6 @@
 {
   "name": "dindist",
-  "version": "0.0.1",
+  "version": "0.0.0-dripip",
   "description": "Fixed version of endent",
   "main": "dist/index.js",
   "prepublishOnly": "npm test",
