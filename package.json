@@ -6,7 +6,7 @@
   "prepublishOnly": "yarn test",
   "scripts": {
     "test": "jest",
-    "prepare": "yarn build",
+    "prepublishOnly": "yarn build",
     "build": "tsc",
     "dripip:stable": "dripip stable",
     "dripip:preview": "dripip preview"
