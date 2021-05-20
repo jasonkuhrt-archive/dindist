@@ -10,7 +10,7 @@
   "scripts": {
     "test": "jest",
     "prepublishOnly": "yarn build",
-    "build": "tsc",
+    "build": "rm -rf dist && tsc",
     "dripip:stable": "dripip stable",
     "dripip:preview": "dripip preview"
   },
