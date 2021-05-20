@@ -7,7 +7,9 @@
   "scripts": {
     "test": "jest",
     "prepare": "yarn build",
-    "build": "tsc"
+    "build": "tsc",
+    "dripip:stable": "dripip stable",
+    "dripip:preview": "dripip preview"
   },
   "repository": {
     "type": "git",
