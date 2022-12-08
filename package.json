@@ -2,8 +2,10 @@
   "name": "dindist",
   "version": "0.0.0-dripip",
   "description": "Fixed version of endent",
+  "type": "module",
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts"
   "files": [
     "dist"
   ],
